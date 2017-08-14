@@ -1,0 +1,11 @@
+img{
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto
+}
+
+.text-center{text-align:center}
+
+ul li{list-style-type: none}
+
+.btn{margin: 10px auto; background: red; color: snow}

@@ -1,0 +1,20 @@
+
+<div class="container" class="text-center" *ngFor="let article of articles">
+  <div class="row">
+    <div class="col-md-2">
+      <h2 (click)="onLoadText()">{{article.title}}</h2>
+    
+      <select #selectedCategory (click)="getValueFromSelect(this.selectedCategory.value)">
+        <option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
+      </select>
+    </div>
+    <div class="col-md-6" *ngIf="loadText">
+        <read-more [ngStyle]="{'color': color,'background-color':color}" [text]="article.description" [maxLength]="200"  (change)="onChnageFontSize($event)" >
+             <div class="right">
+               <img src="{{article.image}}" *ngIf="showOrHideImage" alt="{{article.image}}"/>
+               <div><button class="btn" (click)="showHideImage()"> {{showOrHideImage? 'Hide':'Show'}}</button></div>   
+            </div>
+        </read-more>
+     </div>
+  </div>
+</div>
